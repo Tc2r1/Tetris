@@ -9,6 +9,7 @@ public class Group : MonoBehaviour {
 	public GameManager gameManager;
 	public SpawnManager spawnManager;
 	private float lastFall = 0;
+	private bool gameOver = false;
 
 	// Use this for initialization
 	void Start () {
@@ -17,17 +18,18 @@ public class Group : MonoBehaviour {
 			gameManager = FindObjectOfType<GameManager>();
 		}
 
-
-
-		// On Initial Spawn, if Invalid, Trigger GameOver
-		if(!isValidGridPos()){
-			gameManager.setGameOver();
-			Destroy(gameObject);
-		}
-
 		if(!spawnManager){
 			spawnManager = FindObjectOfType<SpawnManager>();
 		}
+		// On Initial Spawn, if Invalid, Trigger GameOver
+		if(!isValidGridPos() && !gameOver){
+			gameManager.setGameOver();
+			//Destroy(gameObject);
+			DestroyImmediate (gameObject);
+			gameOver = true;
+		}
+
+
 	}
 
 	// Update is called once per frame

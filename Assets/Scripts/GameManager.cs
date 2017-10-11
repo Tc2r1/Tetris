@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
+
 	// static singleton variable to reference self
 	public static GameManager Instance;
 
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour {
 	public GUIText restartText;
 	public GUIText gameOverText;
 	private int score;
+	private Animator animator;
 	private bool gameOver;
 	private bool restart;
 
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour {
 	void Start(){
 		gameOver = false;
 		restart  = false;
+		animator = gameOverText.GetComponent<Animator> ();
 		restartText.text = "";
 		gameOverText.text = "";
 		score = 0;
@@ -58,6 +61,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void setGameOver(){
+		animator.SetTrigger ("GameOverTrigger");
 		gameOverText.text = "Game Over";
 		gameOver = true;
 	}

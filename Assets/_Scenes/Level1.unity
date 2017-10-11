@@ -77,15 +77,17 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFiltering: 0
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousColorSigma: 1
-    m_PVRFilteringAtrousNormalSigma: 1
-    m_PVRFilteringAtrousPositionSigma: 1
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -238,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groups:
-  - {fileID: 1357841302928908, guid: f826fccb3d4abbc488977bba75c2fd64, type: 2}
+  - {fileID: 1977121661664984, guid: f826fccb3d4abbc488977bba75c2fd64, type: 2}
   - {fileID: 1137973088918726, guid: b04523e23c549544db4e3a09a3167f0c, type: 2}
   - {fileID: 1585144594970270, guid: 564dec9db34277f419c56059e03aefd2, type: 2}
   - {fileID: 1899442959121760, guid: f0fcd9f972230da4c83f9e13374f34c5, type: 2}
@@ -426,7 +428,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4280418119
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &1459841060
@@ -549,7 +551,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4280418119
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &1591673731
@@ -608,6 +610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1591673732}
+  destroyDelay: 0.1
 --- !u!1 &1617441093
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,8 +635,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1617441093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.5, y: 1.2, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 26215817}
   m_RootOrder: 2
@@ -663,7 +666,7 @@ GUIText:
   m_GameObject: {fileID: 1617441093}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: GAME OVER
+  m_Text: GameOver
   m_Anchor: 4
   m_Alignment: 1
   m_PixelOffset: {x: 0, y: 0}
